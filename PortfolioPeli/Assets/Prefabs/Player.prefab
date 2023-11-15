@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7608849125395037514}
   - component: {fileID: 5601947765243332155}
   - component: {fileID: 8107199729776515078}
-  - component: {fileID: 9143710456739432147}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -30,8 +29,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8512083719290417913}
   - {fileID: 3830147473504405701}
@@ -69,7 +68,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.001770258, y: 0.00000011920929}
+  m_Offset: {x: 0.0024570823, y: -0.0018590987}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -80,7 +79,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.87608206, y: 0.6105435}
+  m_Size: {x: 0.9327537, y: 1.5070088}
   m_EdgeRadius: 0
 --- !u!114 &5601947765243332155
 MonoBehaviour:
@@ -94,25 +93,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 115149d0a3baf7f4998739cf7bc5d42b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerScore: 0
   moveSpeed: 5
   bullet: {fileID: 6365798145836782440, guid: f2b49edcee1ba88458f24de27700bc82, type: 3}
   m_bulletSpawn: {fileID: 3830147473504405701}
 --- !u!114 &8107199729776515078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778365948611382956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88a17032cfe65034fb0c7730f3c38452, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3
-  damageCause: {fileID: 2482882887410405748, guid: fca3482eab7d76344bf53da7c99937cc,
-    type: 3}
---- !u!114 &9143710456739432147
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,7 +137,7 @@ Transform:
   m_GameObject: {fileID: 3321016046959086591}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.432, z: 0}
+  m_LocalPosition: {x: 0, y: 0.652, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -185,7 +170,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6942206078896557937}
@@ -231,7 +216,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 003f6c10ad55132428ebf778400e7da9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4710e7307eb8e04c9f3eb3319d1cc3f, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
