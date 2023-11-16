@@ -7,8 +7,13 @@ public class EnemyDamaged : MonoBehaviour
     public int health = 1;
     public GameObject damageCause;
 
-    public float enemyPoints = 100f;
+    public int enemyPoints = 100;
     private Player player;
+
+    void Start()
+    {
+        player = FindObjectOfType<Player>();
+    }
 
     public void TakeDamage(int damage)
     {
@@ -16,23 +21,13 @@ public class EnemyDamaged : MonoBehaviour
         if (health <= 0)
         {
             Die();
-            GainPoints();
         }
     }
 
     void Die()
     {
         Instantiate(damageCause, transform.position, Quaternion.identity);
+        player.UpdateScore(enemyPoints);
         Destroy(gameObject);
-    }
-
-    void GainPoints()
-    {
-        player = GetComponent<Player>();
-
-        if (player != null)
-        {
-            player.UpdateScore(enemyPoints);
-        }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Player : MonoBehaviour
 
 
     private Animator anim;
+    public Text scoreText;
 
     public void Shoot()
     {
@@ -20,8 +22,10 @@ public class Player : MonoBehaviour
 
     public void UpdateScore(int points)
     {
-        playerScore += (int)points;
+        playerScore += points;
     }
+
+
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
