@@ -196,6 +196,8 @@ MonoBehaviour:
   health: 5
   damageCause: {fileID: 6365798145836782440, guid: f2b49edcee1ba88458f24de27700bc82,
     type: 3}
+  enemyPoints: 500
+  player: {fileID: 0}
 --- !u!114 &8128915500918192879
 MonoBehaviour:
   m_ObjectHideFlags: 0

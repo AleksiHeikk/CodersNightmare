@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerDamaged : MonoBehaviour
 {
     public int health = 3;
+
     public GameObject damageCause;
 
     public void PTakeDamage(int damage)

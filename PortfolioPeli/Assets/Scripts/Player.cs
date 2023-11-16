@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float playerScore = 0;
-
+    public float playerScore = 0f;
     public float moveSpeed = 5.0f;
 
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform m_bulletSpawn;
+
 
     private Animator anim;
 
@@ -18,6 +18,10 @@ public class Player : MonoBehaviour
         Instantiate(bullet, m_bulletSpawn.position, m_bulletSpawn.rotation);
     }
 
+    public void UpdateScore(int points)
+    {
+        playerScore += (int)points;
+    }
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
