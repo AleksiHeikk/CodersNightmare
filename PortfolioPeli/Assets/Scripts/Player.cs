@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    public float playerScore = 0f;
+    public float playerScore;
     public float moveSpeed = 5.0f;
 
     [SerializeField] private GameObject bullet;
@@ -13,16 +13,15 @@ public class Player : MonoBehaviour
 
 
     private Animator anim;
-    public Text scoreText;
 
     public void Shoot()
     {
         Instantiate(bullet, m_bulletSpawn.position, m_bulletSpawn.rotation);
     }
 
-    public void UpdateScore(int points)
+    public void UpdateScore(int enemyPoints)
     {
-        playerScore += points;
+        playerScore += enemyPoints;
     }
 
 

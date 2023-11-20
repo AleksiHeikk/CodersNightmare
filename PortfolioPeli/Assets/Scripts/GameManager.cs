@@ -6,8 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
-    public TextMeshProUGUI scoreText;
     private Player player;
+
+    [SerializeField] private Text scoreText;
+
 
     void Start()
     {
@@ -18,7 +20,7 @@ public class GameManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = "Score: " + player.playerScore.ToString();
+            scoreText.text = "Score: " + player.playerScore.ToString("0");
         }
     }
 }
