@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -13,12 +12,19 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform m_bulletSpawn;
     [SerializeField] private GameObject damageCause;
 
-
     private Animator anim;
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     public void Shoot()
     {
         Instantiate(bullet, m_bulletSpawn.position, m_bulletSpawn.rotation);
+        anim.SetBool("Attack", true);
+        anim.SetBool("Idle", false);
+        anim.SetBool("Walk", false);
     }
 
     public void UpdateScore(int enemyPoints)
@@ -26,17 +32,26 @@ public class Player : MonoBehaviour
         playerScore += enemyPoints;
     }
 
-
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         Vector3 movement = new Vector3(horizontalInput, 0, 0) * moveSpeed * Time.deltaTime;
-        transform.Translate(movement, Space.World);
-
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Shoot();
+        }
+        else if (horizontalInput != 0)
+        {
+            anim.SetBool("Idle", false);
+            anim.SetBool("Attack", false);
+            anim.SetBool("Walk", true);
+        }
+        else
+        {
+            anim.SetBool("Walk", false);
+            anim.SetBool("Attack", false);
+            anim.SetBool("Idle", true);
         }
     }
 
@@ -47,13 +62,20 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             Die();
-            Application.Quit();
         }
     }
 
     void Die()
     {
+        anim.SetTrigger("Die");
         Instantiate(damageCause, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+
+        StartCoroutine(QuitGameAfterDelay(2.0f));
+    }
+
+    IEnumerator QuitGameAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Application.Quit();
     }
 }
