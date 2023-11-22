@@ -6,10 +6,12 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     public float playerScore;
+    public int health = 3;
     public float moveSpeed = 5.0f;
 
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform m_bulletSpawn;
+    [SerializeField] private GameObject damageCause;
 
 
     private Animator anim;
@@ -36,5 +38,22 @@ public class Player : MonoBehaviour
         {
             Shoot();
         }
+    }
+
+    public void PTakeDamage(int damage)
+    {
+        health -= damage;
+
+        if (health <= 0)
+        {
+            Die();
+            Application.Quit();
+        }
+    }
+
+    void Die()
+    {
+        Instantiate(damageCause, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

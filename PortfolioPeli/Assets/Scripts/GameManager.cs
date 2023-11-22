@@ -16,11 +16,16 @@ public class GameManager : MonoBehaviour
         player = FindAnyObjectByType<Player>();
     }
 
+    void Update()
+    {
+        UpdateScoreUI(player.playerScore);
+    }
+
     public void UpdateScoreUI(float playerScore)
     {
         if (scoreText != null)
         {
-            scoreText.text = "Score: " + player.playerScore.ToString("0");
+            scoreText.text = "Score: " + player.playerScore.ToString();
         }
     }
 }

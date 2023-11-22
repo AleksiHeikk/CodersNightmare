@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8812653804366401414}
   - component: {fileID: 9148882598600737712}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,6 +84,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3031461564491501007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3679361520739594320}
+  m_Layer: 3
+  m_Name: BulletSpawn (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3679361520739594320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3031461564491501007}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1, y: -0.81, z: 0.47744235}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7859034152572214157}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6295622363496240993
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,8 +128,8 @@ GameObject:
   - component: {fileID: 8678200811031074451}
   - component: {fileID: 3497926784358869582}
   - component: {fileID: 8128915500918192879}
-  m_Layer: 0
-  m_Name: Enemy1
+  m_Layer: 3
+  m_Name: Error404
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,6 +150,7 @@ Transform:
   m_Children:
   - {fileID: 8812653804366401414}
   - {fileID: 7952980124017297575}
+  - {fileID: 3679361520739594320}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2457666645816501058
@@ -197,7 +229,6 @@ MonoBehaviour:
   damageCause: {fileID: 6365798145836782440, guid: f2b49edcee1ba88458f24de27700bc82,
     type: 3}
   enemyPoints: 500
-  player: {fileID: 0}
 --- !u!114 &8128915500918192879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +244,6 @@ MonoBehaviour:
   enemyBullet: {fileID: 2482882887410405748, guid: fca3482eab7d76344bf53da7c99937cc,
     type: 3}
   enemyBulletSpawn: {fileID: 7952980124017297575}
-  isShooter: 1
   duration: 5
 --- !u!1 &8417317498995248429
 GameObject:
@@ -224,7 +254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7952980124017297575}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BulletSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}

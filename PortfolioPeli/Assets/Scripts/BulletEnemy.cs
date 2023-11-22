@@ -5,7 +5,6 @@ using UnityEngine;
 public class BulletEnemy : MonoBehaviour
 {
 
-
     public float speed = 5f;
     public Rigidbody2D ribo;
     public int damage = 1;
@@ -17,14 +16,14 @@ public class BulletEnemy : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
-        PlayerDamaged enemyDestroy = hitInfo.GetComponent<PlayerDamaged>();
-        if (enemyDestroy != null)
+        Player playerDestroy = hitInfo.GetComponent<Player>();
+        if (playerDestroy != null)
         {
-            enemyDestroy.PTakeDamage(damage);
+            playerDestroy.PTakeDamage(damage);
         }
 
         Destroy(gameObject);
-        Debug.Log("Enemy hit");
+        Debug.Log("Player hit");
     }
 
 }

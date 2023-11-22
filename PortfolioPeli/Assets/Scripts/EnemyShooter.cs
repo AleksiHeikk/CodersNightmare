@@ -6,17 +6,14 @@ public class EnemyShooter : MonoBehaviour
 {
     [SerializeField] GameObject enemyBullet;
     [SerializeField] private Transform enemyBulletSpawn;
-    public bool isShooter;
     [SerializeField] private float duration;
     private float durationTimer;
 
     void FixedUpdate()
     {
-        if (isShooter)
-        {
-            EShoot();
-        }
+        EShoot();
     }
+
     public void EShoot()
     {
 
