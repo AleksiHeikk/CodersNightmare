@@ -8,6 +8,8 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     public int damage = 1;
 
+    // public Sprite[]  bulletSprites;
+
     void Start()
     {
         rb.velocity = transform.up * speed;
@@ -24,5 +26,9 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
         Debug.Log("Enemy hit");
     }
+
+    // tänne viel että player bulletin img/sprite on random valikoitu vaihtoehdosta
+    // int randomSprite = Random.Range(0, bulletSprites.Lenght);
+    // Sprite selectedSprite = bulletSprites[randomSprite];
 }
 

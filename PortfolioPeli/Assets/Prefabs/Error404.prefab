@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7859034152572214157}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3679361520739594320}
   m_Layer: 3
-  m_Name: BulletSpawn (1)
+  m_Name: BulletSpawn2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 3031461564491501007}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1, y: -0.81, z: 0.47744235}
+  m_LocalPosition: {x: 1, y: -1.005, z: 0.47744235}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 2457666645816501058}
   - component: {fileID: 8678200811031074451}
   - component: {fileID: 3497926784358869582}
-  - component: {fileID: 8128915500918192879}
+  - component: {fileID: 6068513830822792135}
   m_Layer: 3
   m_Name: Error404
   m_TagString: Enemy
@@ -185,7 +185,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.025370479, y: 0.000000059604645}
+  m_Offset: {x: -0.00913322, y: -0.08118677}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -196,7 +196,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.0348618, y: 1.5038906}
+  m_Size: {x: 3.6681192, y: 1.6662643}
   m_EdgeRadius: 0
 --- !u!114 &8678200811031074451
 MonoBehaviour:
@@ -229,7 +229,7 @@ MonoBehaviour:
   damageCause: {fileID: 6365798145836782440, guid: f2b49edcee1ba88458f24de27700bc82,
     type: 3}
   enemyPoints: 500
---- !u!114 &8128915500918192879
+--- !u!114 &6068513830822792135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -238,13 +238,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6295622363496240993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a989efc58aec37f46b863693e5a07158, type: 3}
+  m_Script: {fileID: 11500000, guid: a7481a870803286489b7f6bf2b791765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyBullet: {fileID: 2482882887410405748, guid: fca3482eab7d76344bf53da7c99937cc,
     type: 3}
-  enemyBulletSpawn: {fileID: 7952980124017297575}
-  duration: 5
+  enemyBulletSpawn1: {fileID: 7952980124017297575}
+  enemyBulletSpawn2: {fileID: 3679361520739594320}
+  minDuration: 5
+  maxDuration: 10
 --- !u!1 &8417317498995248429
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7952980124017297575}
   m_Layer: 3
-  m_Name: BulletSpawn
+  m_Name: BulletSpawn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -270,7 +272,7 @@ Transform:
   m_GameObject: {fileID: 8417317498995248429}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: -0.81, z: 0.47744235}
+  m_LocalPosition: {x: -1, y: -1.005, z: 0.47744235}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
