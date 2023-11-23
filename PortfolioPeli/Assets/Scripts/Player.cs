@@ -92,4 +92,12 @@ public class Player : MonoBehaviour
         Destroy(gameObject);
         Application.Quit();
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+     if (other.CompareTag("Border"))
+        {
+            rb.velocity = Vector2.zero;
+        }
+    }
 }

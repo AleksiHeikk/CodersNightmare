@@ -35,4 +35,7 @@ public class GameManager : MonoBehaviour
             livesText.text = "Lives: " + player.health.ToString();
         }
     }
+
+    // vois heitt‰‰ t‰nne ne menu UI asiat (ehk‰)
+
 }
