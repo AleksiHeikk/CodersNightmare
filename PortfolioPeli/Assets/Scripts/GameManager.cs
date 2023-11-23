@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private Player player;
 
     [SerializeField] private Text scoreText;
+    [SerializeField] private Text livesText;
 
 
     void Start()
@@ -18,14 +19,20 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        UpdateScoreUI(player.playerScore);
+        UpdateUI(player.playerScore);
+        UpdateUI(player.health);
     }
 
-    public void UpdateScoreUI(float playerScore)
+    public void UpdateUI(float playerScore)
     {
         if (scoreText != null)
         {
             scoreText.text = "Score: " + player.playerScore.ToString();
+        }
+
+        if (livesText != null)
+        {
+            livesText.text = "Lives: " + player.health.ToString();
         }
     }
 }
