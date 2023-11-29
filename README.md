@@ -34,7 +34,7 @@ Virus on samanlainen kuin Bugi mutta tällä kertaa se ampuu pelaajaa eli hieman
 - Speed: 3
 
 ### Vihollinen 3 - Error 404
-<img src="https://github.com/AleksiHeikk/PortfolioPeli/assets/122449220/bf5d4af5-59f1-4363-8bab-59118623a9042" width=300px height="200px">
+<img src="https://github.com/AleksiHeikk/PortfolioPeli/assets/122449220/bf5d4af5-59f1-4363-8bab-59118623a9042" width=300px height="175px">
 
 Tämä on ns pelin bossi eli haastavin. Se ampuu kahdesti, mutta on hitaampi
 - Hitpoints: 5
