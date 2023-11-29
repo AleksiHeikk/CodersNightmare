@@ -1,0 +1,24 @@
+PRIMARY:
+- Shields
+- Random Player bullet sprites
+- Finish Player animations
+- Menu UI
+
+SECONDARY:
+- Boss level
+- Enemy animations
+- Audio (SFX & Music)
+
+EXTRA / IF THERE'S TIME
+
+
+
+DONE:
+- Sprites
+- Enemies (partially)
+- Player functions (partially)
+- Bullets (partially)
+- Background
+- Lives UI
+- Score UI
+- Player score
