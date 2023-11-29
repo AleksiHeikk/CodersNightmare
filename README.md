@@ -20,7 +20,7 @@ Pelaaja on "datanomi" ja se puolustaa koodinsa bugeilta ja viruksilta ampumalla 
 
 ## Viholliset
 ### Vihollinen 1 - Bugi 
-<img src="https://github.com/AleksiHeikk/PortfolioPeli/assets/122449220/2d20ad5a-841b-445f-ac0b-9d35a9f240c6" width=225px height="250px">
+<img src="https://github.com/AleksiHeikk/PortfolioPeli/assets/122449220/2d20ad5a-841b-445f-ac0b-9d35a9f240c6" width=225px height="200px">
 
 Bugi on helpoin vihollinen joka liikkuu pelkästään sivuttain ja ei tee muuta. 
 - Hitpoints: 1
