@@ -19,18 +19,21 @@ Pelaaja on "datanomi" ja se puolustaa koodinsa bugeilta ja viruksilta ampumalla 
 ## Viholliset
 ### Vihollinen 1 - Bugi 
 > (kuva)
+
 Bugi on helpoin vihollinen joka liikkuu pelkästään sivuttain ja ei tee muuta. 
 - Hitpoints: 1
 - Speed: 5
 
 ### Vihollinen 2 - Virus
 > (kuva)
+
 Virus on samanlainen kuin Bugi mutta tällä kertaa se ampuu pelaajaa eli hieman haastavampi.
 - Hitpoints: 3
 - Speed: 3
 
 ### Vihollinen 3 - Error 404
 > (kuva)
+
 Tämä on ns pelin bossi eli haastavin. Se ampuu kahdesti, mutta on hitaampi
 - Hitpoints: 5
 - Speed: 1.5 
