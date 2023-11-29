@@ -20,21 +20,21 @@ Pelaaja on "datanomi" ja se puolustaa koodinsa bugeilta ja viruksilta ampumalla 
 
 ## Viholliset
 ### Vihollinen 1 - Bugi 
-<img src="https://github.com/AleksiHeikk/PortfolioPeli/assets/122449220/2d20ad5a-841b-445f-ac0b-9d35a9f240c6" width=250px height="250px">
+<img src="https://github.com/AleksiHeikk/PortfolioPeli/assets/122449220/2d20ad5a-841b-445f-ac0b-9d35a9f240c6" width=200px height="250px">
 
 Bugi on helpoin vihollinen joka liikkuu pelkästään sivuttain ja ei tee muuta. 
 - Hitpoints: 1
 - Speed: 5
 
 ### Vihollinen 2 - Virus
-<img src="https://github.com/AleksiHeikk/PortfolioPeli/assets/122449220/8d8b4f22-a756-48e2-9294-a7eb6e02a068" width=250px height="250px">
+<img src="https://github.com/AleksiHeikk/PortfolioPeli/assets/122449220/8d8b4f22-a756-48e2-9294-a7eb6e02a068" width=200px height="200px">
 
 Virus on samanlainen kuin Bugi mutta tällä kertaa se ampuu pelaajaa eli hieman haastavampi.
 - Hitpoints: 3
 - Speed: 3
 
 ### Vihollinen 3 - Error 404
-<img src="https://github.com/AleksiHeikk/PortfolioPeli/assets/122449220/bf5d4af5-59f1-4363-8bab-59118623a9042" width=250px height="250px">
+<img src="https://github.com/AleksiHeikk/PortfolioPeli/assets/122449220/bf5d4af5-59f1-4363-8bab-59118623a9042" width=300px height="20px">
 
 Tämä on ns pelin bossi eli haastavin. Se ampuu kahdesti, mutta on hitaampi
 - Hitpoints: 5
