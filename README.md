@@ -23,6 +23,6 @@ Hitpoints: 1
 Virus on samanlainen kuin Bugi mutta tällä kertaa se ampuu pelaajaa eli hieman haastavampi.
 Hitpoints: 3
 
-Vihollinen 3 - Error 404* (kuva)
+_Vihollinen 3 - Error 404_ (kuva)
 Tämä on ns pelin bossi eli haastavin. Se ampuu kahdesti, mutta on hitaampi
 Hitpoints: 5
