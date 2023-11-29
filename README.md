@@ -11,28 +11,30 @@ Toimit koodarina ja yrität poistaa virheitä (bugit ja virukset) ja saada koodi
 
 # Pelaaja ja Viholliset
 ## Pelaaja
+![player](https://github.com/AleksiHeikk/PortfolioPeli/assets/122449220/1dee1b7a-33ae-4dd6-a024-d5ed72594adc)
+
 Pelaaja on "datanomi" ja se puolustaa koodinsa bugeilta ja viruksilta ampumalla näppäinhatuilla ja käyttäen kilpiä
-(kuva pelaajasta ja muista asioista)
+(kuva muista asioista)
 - Hitpoints: 3
 - Speed: 5
 
 ## Viholliset
 ### Vihollinen 1 - Bugi 
-> (kuva)
+![bug](https://github.com/AleksiHeikk/PortfolioPeli/assets/122449220/2d20ad5a-841b-445f-ac0b-9d35a9f240c6)
 
 Bugi on helpoin vihollinen joka liikkuu pelkästään sivuttain ja ei tee muuta. 
 - Hitpoints: 1
 - Speed: 5
 
 ### Vihollinen 2 - Virus
-> (kuva)
+![virus](https://github.com/AleksiHeikk/PortfolioPeli/assets/122449220/8d8b4f22-a756-48e2-9294-a7eb6e02a068)
 
 Virus on samanlainen kuin Bugi mutta tällä kertaa se ampuu pelaajaa eli hieman haastavampi.
 - Hitpoints: 3
 - Speed: 3
 
 ### Vihollinen 3 - Error 404
-> (kuva)
+![Boss](https://github.com/AleksiHeikk/PortfolioPeli/assets/122449220/bf5d4af5-59f1-4363-8bab-59118623a904)
 
 Tämä on ns pelin bossi eli haastavin. Se ampuu kahdesti, mutta on hitaampi
 - Hitpoints: 5
