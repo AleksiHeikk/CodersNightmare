@@ -11,7 +11,7 @@ Toimit koodarina ja yrität poistaa virheitä (bugit ja virukset) ja saada koodi
 
 # Pelaaja ja Viholliset
 ## Pelaaja
-![player](https://github.com/AleksiHeikk/PortfolioPeli/assets/122449220/1dee1b7a-33ae-4dd6-a024-d5ed72594adc)
+Assets/Sprites/Player.asset
 
 Pelaaja on "datanomi" ja se puolustaa koodinsa bugeilta ja viruksilta ampumalla näppäinhatuilla ja käyttäen kilpiä
 (kuva muista asioista)
