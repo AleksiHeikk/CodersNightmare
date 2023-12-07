@@ -1,5 +1,4 @@
 PRIMARY:
-- Shields
 - Random Player bullet sprites
 - Finish Player animations
 - Menu UI
@@ -10,7 +9,7 @@ SECONDARY:
 - Audio (SFX & Music)
 
 EXTRA / IF THERE'S TIME
-
+- Hasu Easter Egg sivun sulku nappulasta
 
 
 DONE:
@@ -22,3 +21,4 @@ DONE:
 - Lives UI
 - Score UI
 - Player score
+- Shields (better sprites for the states)

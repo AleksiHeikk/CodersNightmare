@@ -17,24 +17,27 @@ public class BulletEnemy : MonoBehaviour
         ribo.velocity = -transform.up * speed;
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        Player playerDestroy = hitInfo.GetComponent<Player>();
-        if (playerDestroy != null)
+        if (other.CompareTag("Player"))
         {
-            playerDestroy.PTakeDamage(damage);
+            Player playerDestroy = other.GetComponent<Player>();
+            if (playerDestroy != null)
+            {
+                playerDestroy.PTakeDamage(damage);
+            }
         }
 
         Destroy(gameObject);
-        Debug.Log("Player hit");
     }
 
-    // tähän tulis viel jos pelaaja tuhoaa vihollisten ammus niin saa 50 pistettä
-   /* void PlayerDestroysEBullet()
-    {
-        if (Player destroyes BulletEnemy){
-            player.UpdateScore(bulletPoints);
 
-        }
-    } */
+    // tähän tulis viel jos pelaaja tuhoaa vihollisten ammus niin saa 50 pistettä
+    /* void PlayerDestroysEBullet()
+     {
+         if (Player destroyes BulletEnemy){
+             player.UpdateScore(bulletPoints);
+
+         }
+     } */
 }

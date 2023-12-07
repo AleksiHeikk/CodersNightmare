@@ -8,27 +8,35 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     public int damage = 1;
 
-    // public Sprite[]  bulletSprites;
+    public Sprite[]  bulletSprites;
+    public SpriteRenderer sr;
 
     void Start()
     {
         rb.velocity = transform.up * speed;
+        sr = GetComponent<SpriteRenderer>();
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        EnemyDamaged enemyDestroy = hitInfo.GetComponent<EnemyDamaged>();
-        if (enemyDestroy != null)
+        if (other.CompareTag("Enemy"))
         {
-            enemyDestroy.TakeDamage(damage);
+            EnemyDamaged enemyDestroy = other.GetComponent<EnemyDamaged>();
+            if (enemyDestroy != null)
+            {
+                enemyDestroy.TakeDamage(damage);
+                Destroy(gameObject);
+            }
+            Destroy(gameObject);
         }
-
         Destroy(gameObject);
-        Debug.Log("Enemy hit");
     }
 
     // tänne viel että player bulletin img/sprite on random valikoitu vaihtoehdosta
-    // int randomSprite = Random.Range(0, bulletSprites.Lenght);
-    // Sprite selectedSprite = bulletSprites[randomSprite];
+     void Update()
+    {
+        int randomSprite = Random.Range(0, bulletSprites.Length);
+        Sprite selectedSprite = bulletSprites[randomSprite];
+    }
 }
 

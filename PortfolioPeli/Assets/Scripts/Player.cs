@@ -69,10 +69,6 @@ public class Player : MonoBehaviour
             anim.SetBool("Attack", false);
             anim.SetBool("Idle", true);
         }
-
-        Debug.Log("Horizontal Input: " + horizontalInput);
-        Debug.Log("Movement Vector: " + movement);
-
     }
 
     public void PTakeDamage(int damage)

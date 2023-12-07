@@ -8,6 +8,8 @@ TagManager:
   - Ceiling
   - Floor
   - Border
+  - EnemyBullet
+  - Bullet
   layers:
   - Default
   - TransparentFX
