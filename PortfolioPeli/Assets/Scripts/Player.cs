@@ -28,14 +28,23 @@ public class Player : MonoBehaviour
             if (canShoot)
             {
                 Instantiate(bullet, m_bulletSpawn.position, m_bulletSpawn.rotation);
+
                 StartCoroutine(ShootCooldown());
+                StartCoroutine(ShootAnimation());
+
                 anim.SetBool("Attack", true);
                 anim.SetBool("Idle", false);
                 anim.SetBool("Walk", false);
         }
+
+        
+    }
+    private IEnumerator ShootAnimation() {
+        yield return new WaitForSeconds(0.25f);
+        anim.SetBool("Attack", false);
     }
 
-        IEnumerator ShootCooldown()
+    IEnumerator ShootCooldown()
         {
             canShoot = false;
             yield return new WaitForSeconds(shootCooldown);
@@ -52,23 +61,23 @@ public class Player : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         Vector3 movement = new Vector3(horizontalInput, 0, 0) * moveSpeed * Time.deltaTime;
         transform.position += movement;
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Shoot();
-        }
-       if (horizontalInput != 0)
+        if (horizontalInput != 0)
         {
             anim.SetBool("Idle", false);
-            anim.SetBool("Attack", false);
+            // anim.SetBool("Attack", false);
             anim.SetBool("Walk", true);
         }
         else
         {
             anim.SetBool("Walk", false);
-            anim.SetBool("Attack", false);
+            // anim.SetBool("Attack", false);
             anim.SetBool("Idle", true);
         }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Shoot();
+        }
+
     }
 
     public void PTakeDamage(int damage)
@@ -81,12 +90,16 @@ public class Player : MonoBehaviour
             Die();
         }
     }
-
-    void Die()
+    private IEnumerator DieEnumerator()
     {
-        anim.SetTrigger("Die");
+        yield return new WaitForSeconds(1);
         Destroy(gameObject);
         Application.Quit();
+    }
+    void Die()
+    {
+        anim.SetBool("Death", true);
+        StartCoroutine(DieEnumerator());
     }
 
     void OnTriggerEnter2D(Collider2D other)
