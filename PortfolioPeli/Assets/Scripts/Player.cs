@@ -12,9 +12,14 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject bullet;
     [SerializeField] private Transform m_bulletSpawn;
     [SerializeField] private GameObject damageCause;
-    
+
+    [SerializeField] private AudioSource shootingAudio;
+    [SerializeField] private AudioSource damageAudio;
+    [SerializeField] private GameObject flickerObject;
+
     private Rigidbody2D rb;
     private Animator anim;
+    private SpriteRenderer playerSprite;
 
     private bool canShoot = true;
 
@@ -23,21 +28,24 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
-        public void Shoot()
+    public void Shoot()
+    {
+        if (canShoot)
         {
-            if (canShoot)
+            if (shootingAudio != null)
             {
-                Instantiate(bullet, m_bulletSpawn.position, m_bulletSpawn.rotation);
+                shootingAudio.Play();
+            }
 
-                StartCoroutine(ShootCooldown());
-                StartCoroutine(ShootAnimation());
+            Instantiate(bullet, m_bulletSpawn.position, m_bulletSpawn.rotation);
 
-                anim.SetBool("Attack", true);
-                anim.SetBool("Idle", false);
-                anim.SetBool("Walk", false);
+            StartCoroutine(ShootCooldown());
+            StartCoroutine(ShootAnimation());
+
+            anim.SetBool("Attack", true);
+            anim.SetBool("Idle", false);
+            anim.SetBool("Walk", false);
         }
-
-        
     }
     private IEnumerator ShootAnimation() {
         yield return new WaitForSeconds(0.25f);
@@ -64,13 +72,11 @@ public class Player : MonoBehaviour
         if (horizontalInput != 0)
         {
             anim.SetBool("Idle", false);
-            // anim.SetBool("Attack", false);
             anim.SetBool("Walk", true);
         }
         else
         {
             anim.SetBool("Walk", false);
-            // anim.SetBool("Attack", false);
             anim.SetBool("Idle", true);
         }
         if (Input.GetKeyDown(KeyCode.Space))
@@ -82,6 +88,8 @@ public class Player : MonoBehaviour
 
     public void PTakeDamage(int damage)
     {
+        damageAudio.Play();
+        StartCoroutine(FlickerAnimation());
         health -= damage;
         playerScore -= 150;
 
@@ -90,6 +98,21 @@ public class Player : MonoBehaviour
             Die();
         }
     }
+    private IEnumerator FlickerAnimation()
+    {
+        int flickerCount = 5;
+
+        float flickerDuration = 0.1f;
+
+        for (int i = 0; i < flickerCount; i++)
+        {
+            playerSprite.enabled = !playerSprite.enabled;
+
+            yield return new WaitForSeconds(flickerDuration);
+        }
+        playerSprite.enabled = true;
+    }
+
     private IEnumerator DieEnumerator()
     {
         yield return new WaitForSeconds(1);

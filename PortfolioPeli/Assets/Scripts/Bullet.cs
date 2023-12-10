@@ -11,7 +11,7 @@ public class Bullet : MonoBehaviour
     public Sprite[] bulletSprites;
     public SpriteRenderer sr;
 
-    private float timeBetweenSpriteChanges = 0.5f; // Adjust the time as needed
+    private float timeBetweenSpriteChanges = 0.5f; 
     private float timer = 0f;
 
     void Start()
@@ -31,28 +31,22 @@ public class Bullet : MonoBehaviour
                 enemyDamageHandler.TakeDamage(damage);
             }
 
-            DestroyBullet(); // Destroy the bullet when it hits an enemy
+            Destroy(gameObject);
         }
+        Destroy(gameObject);
     }
 
-    void DestroyBullet()
-    {
-        // Additional cleanup or effects can be added here
-        Destroy(gameObject); // Destroy the bullet
-    }
 
     void Update()
     {
-        // Change sprite every time the bullet is fired
         timer += Time.deltaTime;
         if (timer >= timeBetweenSpriteChanges)
         {
             SetRandomSprite();
-            timer = 0f; // Reset the timer
+            timer = 0f;
         }
     }
 
-    // Method to set a random sprite
     void SetRandomSprite()
     {
         int randomSprite = Random.Range(0, bulletSprites.Length);

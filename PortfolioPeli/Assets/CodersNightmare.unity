@@ -2994,26 +2994,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2817387378071481569, guid: c2ffb5215c5769b49adfb2c8ff532c9b,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4525121974059968330, guid: c2ffb5215c5769b49adfb2c8ff532c9b,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4525121974059968330, guid: c2ffb5215c5769b49adfb2c8ff532c9b,
-        type: 3}
-      propertyPath: m_ApplyRootMotion
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5601947765243332155, guid: c2ffb5215c5769b49adfb2c8ff532c9b,
-        type: 3}
-      propertyPath: moveSpeed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 6942206078896557937, guid: c2ffb5215c5769b49adfb2c8ff532c9b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3063,26 +3043,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7608849125395037514, guid: c2ffb5215c5769b49adfb2c8ff532c9b,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7928632922870307665, guid: c2ffb5215c5769b49adfb2c8ff532c9b,
-        type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7928632922870307665, guid: c2ffb5215c5769b49adfb2c8ff532c9b,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7928632922870307665, guid: c2ffb5215c5769b49adfb2c8ff532c9b,
-        type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
