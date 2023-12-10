@@ -8,35 +8,54 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     public int damage = 1;
 
-    public Sprite[]  bulletSprites;
+    public Sprite[] bulletSprites;
     public SpriteRenderer sr;
+
+    private float timeBetweenSpriteChanges = 0.5f; // Adjust the time as needed
+    private float timer = 0f;
 
     void Start()
     {
         rb.velocity = transform.up * speed;
         sr = GetComponent<SpriteRenderer>();
+        SetRandomSprite();
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Enemy"))
         {
-            EnemyDamaged enemyDestroy = other.GetComponent<EnemyDamaged>();
-            if (enemyDestroy != null)
+            EnemyDamaged enemyDamageHandler = other.GetComponent<EnemyDamaged>();
+            if (enemyDamageHandler != null)
             {
-                enemyDestroy.TakeDamage(damage);
-                Destroy(gameObject);
+                enemyDamageHandler.TakeDamage(damage);
             }
-            Destroy(gameObject);
+
+            DestroyBullet(); // Destroy the bullet when it hits an enemy
         }
-        Destroy(gameObject);
     }
 
-    // tänne viel että player bulletin img/sprite on random valikoitu vaihtoehdosta
-     void Update()
+    void DestroyBullet()
+    {
+        // Additional cleanup or effects can be added here
+        Destroy(gameObject); // Destroy the bullet
+    }
+
+    void Update()
+    {
+        // Change sprite every time the bullet is fired
+        timer += Time.deltaTime;
+        if (timer >= timeBetweenSpriteChanges)
+        {
+            SetRandomSprite();
+            timer = 0f; // Reset the timer
+        }
+    }
+
+    // Method to set a random sprite
+    void SetRandomSprite()
     {
         int randomSprite = Random.Range(0, bulletSprites.Length);
-        Sprite selectedSprite = bulletSprites[randomSprite];
+        sr.sprite = bulletSprites[randomSprite];
     }
 }
-

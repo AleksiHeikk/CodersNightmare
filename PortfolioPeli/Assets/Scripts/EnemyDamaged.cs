@@ -28,6 +28,6 @@ public class EnemyDamaged : MonoBehaviour
     {
         Instantiate(damageCause, transform.position, Quaternion.identity);
         player.UpdateScore(enemyPoints);
-        Destroy(gameObject);
+        Destroy(gameObject); // Destroy the enemy
     }
 }

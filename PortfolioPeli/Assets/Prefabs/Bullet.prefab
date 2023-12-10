@@ -149,6 +149,34 @@ MonoBehaviour:
   - {fileID: 968295800, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
   - {fileID: -1323010062, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
   - {fileID: -667479662, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: -77420169, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: 1284975804, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: 1038507191, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: 648439364, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: -1529019059, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: -560873442, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: 189009807, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: 1716644787, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: 24558102, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: 81485214, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: -773714243, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: 1340637872, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: -712205791, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: 1260333479, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: 2037116846, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: -1909497454, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: 1269958332, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: 1659026792, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: -651610710, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: -1846639861, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: 633086537, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: -1474815997, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: 1656110075, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: -251682536, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: 2074749458, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: 2074749458, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: 320719927, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
+  - {fileID: -851019562, guid: 6521e2b6728a6ab45bd60a445a6fb4ba, type: 3}
   sr: {fileID: 1006884664666922910}
 --- !u!212 &1006884664666922910
 SpriteRenderer:
