@@ -23,10 +23,13 @@ public class Player : MonoBehaviour
 
     private bool canShoot = true;
 
+    private GameManager gameManager;
+
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        playerSprite = GetComponent<SpriteRenderer>();
     }
     public void Shoot()
     {
@@ -89,29 +92,28 @@ public class Player : MonoBehaviour
     public void PTakeDamage(int damage)
     {
         damageAudio.Play();
-        StartCoroutine(FlickerAnimation());
+        // StartCoroutine(FlickerAnimation());
         health -= damage;
         playerScore -= 150;
 
         if (health <= 0)
         {
             Die();
+            gameManager.GameOver();
         }
     }
-    private IEnumerator FlickerAnimation()
+
+    /* private IEnumerator FlickerAnimation()
     {
         int flickerCount = 5;
+        float flickerDuration = 1f;
 
-        float flickerDuration = 0.1f;
-
-        for (int i = 0; i < flickerCount; i++)
-        {
-            playerSprite.enabled = !playerSprite.enabled;
-
+        for (int i = 0; i > flickerCount; i++) { 
+            gameObject.SetActive(!gameObject.activeSelf);
             yield return new WaitForSeconds(flickerDuration);
         }
-        playerSprite.enabled = true;
-    }
+        gameObject.SetActive(true);
+    } */
 
     private IEnumerator DieEnumerator()
     {

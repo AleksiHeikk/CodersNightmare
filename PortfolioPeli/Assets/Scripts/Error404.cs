@@ -10,6 +10,8 @@ public class Error404 : MonoBehaviour
     [SerializeField] private float maxDuration = 10.0f;
     private float durationTimer;
 
+    [SerializeField] private AudioSource errorAudio;
+
     void Start()
     {
         durationTimer = Random.Range(minDuration, maxDuration);
@@ -22,6 +24,7 @@ public class Error404 : MonoBehaviour
 
     public void EShoot()
     {
+
         durationTimer -= Time.deltaTime;
 
         if (durationTimer > 0) return;
@@ -30,5 +33,7 @@ public class Error404 : MonoBehaviour
 
         Instantiate(enemyBullet, enemyBulletSpawn1.position, enemyBulletSpawn1.rotation);
         Instantiate(enemyBullet, enemyBulletSpawn2.position, enemyBulletSpawn2.rotation);
+
+        errorAudio.Play();
     }
 }

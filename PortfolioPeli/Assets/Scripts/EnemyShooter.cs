@@ -9,6 +9,8 @@ public class EnemyShooter : MonoBehaviour
     [SerializeField] private float maxDuration = 10.0f;
     private float durationTimer;
 
+    [SerializeField] private AudioSource enemyShootAudio;
+
     void Start()
     {
         durationTimer = Random.Range(minDuration, maxDuration);
@@ -21,6 +23,7 @@ public class EnemyShooter : MonoBehaviour
 
     public void EShoot()
     {
+        
         durationTimer -= Time.deltaTime;
 
         if (durationTimer > 0) return;
@@ -28,5 +31,7 @@ public class EnemyShooter : MonoBehaviour
         durationTimer = Random.Range(minDuration, maxDuration);
 
         Instantiate(enemyBullet, enemyBulletSpawn.position, enemyBulletSpawn.rotation);
+
+        enemyShootAudio.Play();
     }
 }
