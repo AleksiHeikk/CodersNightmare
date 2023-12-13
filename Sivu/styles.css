@@ -180,8 +180,5 @@ nav {
 
 .ProjectList a{
     text-decoration: none;
-}
-
-.ProjectList a:visited{
     color: black;
 }
