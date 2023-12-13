@@ -30,7 +30,7 @@ section {
     padding: 40px 0;
 }
 
-.about, .features, .screenshots, .contact {
+.about, .features, .screenshots, .contact, .projects {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -156,4 +156,32 @@ nav {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+/* Projekti esitys */
+
+.ProjectList{
+    max-width: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.ProjectList .Project1, .Project2, .Project3, .Project4, .Project5{
+    border: groove 3px #e6e6e6  ;
+    padding: 2px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.ProjectList img{
+    max-width: 300px;
+    max-height: 250px;
+}
+
+.ProjectList a{
+    text-decoration: none;
+}
+
+.ProjectList a:visited{
+    color: black;
 }

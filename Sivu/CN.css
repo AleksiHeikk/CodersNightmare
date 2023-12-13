@@ -30,7 +30,7 @@ section {
     padding: 40px 0;
 }
 
-.about, .features, .screenshots, .contact {
+.about, .features, .screenshots, .details, .contact {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -51,11 +51,24 @@ li {
 }
 
 .screenshots img {
-    width: 30%;
+    width: 90%;
     max-width: 100%;
     height: auto;
     display: block;
     margin: 5px;
+}
+
+.screenshots .screen-images{
+    display: flex;
+    align-items: center;
+}
+.screenshots #Concept, #Ingame, #Menu{
+    max-width: 90%;
+    height: 20rem;
+}
+.screenshots h4{
+    width: 80%;
+    margin-left: 5px;
 }
 
 .features-content {
@@ -71,6 +84,7 @@ li {
 
 .feature-images {
     flex: 1;
+    
 }
 
 .features li {
@@ -81,9 +95,11 @@ li {
 
 .feature-images img {
     width: 100%;
-    max-width: 400px;
+    max-width: 325px;
     height: auto;
     display: none;
+    float: right;
+    margin-top: -15%;
 }
 
 footer {
