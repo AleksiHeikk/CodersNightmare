@@ -37,6 +37,22 @@ section {
     margin-bottom: 20px;
 }
 
+.PKuva {
+    max-width: 30%;
+    float: right;
+    margin-top: -20%;
+}
+
+.text-content{
+    max-width: 60%;
+}
+
+.content-wrapper::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 h2 {
     color: #333;
 }
