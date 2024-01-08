@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
 
     private bool isSettingsOpen = false;
 
+    [SerializeField] private GameObject[] waveSets;
+
     void Start()
     {
         instance = this;
