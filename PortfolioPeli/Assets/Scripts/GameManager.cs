@@ -165,4 +165,9 @@ public class GameManager : MonoBehaviour
     {
         musicAudioSource.volume = volume;
     }
+
+    public void NextWave()
+    {
+
+    }
 }

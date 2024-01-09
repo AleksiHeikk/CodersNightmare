@@ -10,6 +10,7 @@ TagManager:
   - Border
   - EnemyBullet
   - Bullet
+  - EnemyW
   layers:
   - Default
   - TransparentFX
