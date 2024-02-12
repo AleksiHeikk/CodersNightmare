@@ -10,7 +10,7 @@ public class BulletEnemy : MonoBehaviour
     public Rigidbody2D ribo;
     public int damage = 1;
 
-    // public int bulletPoints = 50;
+    public int bulletPoints = 50;
 
     void Start()
     {
@@ -27,17 +27,24 @@ public class BulletEnemy : MonoBehaviour
                 playerDestroy.PTakeDamage(damage);
             }
         }
+        else if (other.CompareTag("Bullet"))
+        {
+            PlayerDestroysEBullet();
+        }
 
         Destroy(gameObject);
     }
 
 
-    // tähän tulis viel jos pelaaja tuhoaa vihollisten ammus niin saa 50 pistettä
-    /* void PlayerDestroysEBullet()
-     {
-         if (Player destroyes BulletEnemy){
-             player.UpdateScore(bulletPoints);
-
-         }
-     } */
+    void PlayerDestroysEBullet()
+    {
+        if (GameObject.FindWithTag("Player") != null)
+        {
+            Player player = GameObject.FindWithTag("Player").GetComponent<Player>();
+            if (player != null)
+            {
+                player.UpdateScore(bulletPoints);
+            }
+        }
+    }
 }

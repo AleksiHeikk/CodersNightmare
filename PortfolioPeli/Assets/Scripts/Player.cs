@@ -30,6 +30,12 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<SpriteRenderer>();
+
+        gameManager = GameObject.FindObjectOfType<GameManager>();
+        if (gameManager == null)
+        {
+            Debug.LogError("GameManager not found in the scene!");
+        }
     }
     public void Shoot()
     {
@@ -102,18 +108,6 @@ public class Player : MonoBehaviour
             gameManager.GameOver();
         }
     }
-
-    /* private IEnumerator FlickerAnimation()
-    {
-        int flickerCount = 5;
-        float flickerDuration = 1f;
-
-        for (int i = 0; i > flickerCount; i++) { 
-            gameObject.SetActive(!gameObject.activeSelf);
-            yield return new WaitForSeconds(flickerDuration);
-        }
-        gameObject.SetActive(true);
-    } */
 
     private IEnumerator DieEnumerator()
     {

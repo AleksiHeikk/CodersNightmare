@@ -1,8 +1,8 @@
-// GameManager script
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,24 +16,29 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Button retryButton;
     [SerializeField] private Button overMenuButton;
     [SerializeField] private Button vicMenuButton;
-    [SerializeField] private Button settingsButton; 
+    [SerializeField] private Button settingsButton;
 
     [SerializeField] private GameObject gameOverObject;
     [SerializeField] private GameObject victoryObject;
-    [SerializeField] private GameObject settingsObject; 
+    [SerializeField] private GameObject settingsObject;
 
     [SerializeField] private TextMeshProUGUI victoryScoreText;
     [SerializeField] private TextMeshProUGUI victoryLivesText;
     [SerializeField] private TextMeshProUGUI victoryFinalScoreText;
 
-    [SerializeField] private Slider sfxSlider; 
-    [SerializeField] private Slider musicSlider;
-    [SerializeField] private AudioSource sfxAudioSource;
-    [SerializeField] private AudioSource musicAudioSource;
-
     private bool isSettingsOpen = false;
 
     [SerializeField] private GameObject[] waveSets;
+    [SerializeField] private float timeBetweenWaves = 5f;
+    private int currentWaveIndex = 0;
+    private bool isWaveActive = false;
+
+    [SerializeField] private GameObject waveCountdown;
+    [SerializeField] private Text waveCountdownText;
+    private float currentCountdown;
+    private bool isCountdownActive = false;
+
+    [SerializeField] private AudioSource backgroundAudio;
 
     void Start()
     {
@@ -43,26 +48,12 @@ public class GameManager : MonoBehaviour
         retryButton.onClick.AddListener(RetryGame);
         overMenuButton.onClick.AddListener(GoToMainMenu);
         vicMenuButton.onClick.AddListener(GoToMainMenu);
-        settingsButton.onClick.AddListener(ToggleSettings); 
+        settingsButton.onClick.AddListener(ToggleSettings);
 
         gameOverObject.SetActive(false);
         victoryObject.SetActive(false);
         settingsObject.SetActive(false);
 
-        sfxAudioSource = GetComponent<AudioSource>(); 
-        musicAudioSource = GetComponent<AudioSource>(); 
-
-        if (sfxSlider != null)
-        {
-            sfxSlider.value = sfxAudioSource.volume;
-            sfxSlider.onValueChanged.AddListener(UpdateSFXVolume);
-        }
-
-        if (musicSlider != null)
-        {
-            musicSlider.value = musicAudioSource.volume;
-            musicSlider.onValueChanged.AddListener(UpdateMusicVolume);
-        }
 
         if (victoryScoreText != null)
         {
@@ -73,11 +64,13 @@ public class GameManager : MonoBehaviour
         {
             settingsObject.SetActive(isSettingsOpen);
         }
+
+        StartCoroutine(StartWaveAfterDelay());
     }
 
     void Update()
     {
-        if (!isSettingsOpen) 
+        if (!isSettingsOpen)
         {
             UpdateUI(player.playerScore);
             UpdateUI(player.health);
@@ -87,15 +80,30 @@ public class GameManager : MonoBehaviour
                 GameOver();
             }
 
-            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            Debug.Log("Number of Enemies: " + enemies.Length);
-
-            if (enemies.Length == 0)
+            if (isWaveActive)
             {
-                Victory();
+                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+                Debug.Log("Number of Enemies: " + enemies.Length);
+
+                if (enemies.Length == 0)
+                {
+                    if (currentWaveIndex == waveSets.Length)
+                    {
+                        Victory();
+                    }
+                    else
+                    {
+                        // Start countdown after winning the wave
+                        if (!isCountdownActive)
+                        {
+                            StartCoroutine(ShowCountdownAndStartNextWave());
+                        }
+                    }
+                }
             }
         }
     }
+
 
     public void UpdateUI(float playerScore)
     {
@@ -123,11 +131,13 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         gameOverObject.SetActive(true);
+        backgroundAudio.Stop();
     }
 
     private void Victory()
     {
         victoryObject.SetActive(true);
+        backgroundAudio.Stop();
         int healthPoints = (int)(player.health * 500);
 
         float finalTally = healthPoints + player.playerScore;
@@ -156,18 +166,54 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void UpdateSFXVolume(float volume)
+    private IEnumerator StartWaveAfterDelay()
     {
-        sfxAudioSource.volume = volume;
+        yield return new WaitForSeconds(timeBetweenWaves);
+        StartWave();
     }
 
-    public void UpdateMusicVolume(float volume)
+    private void StartWave()
     {
-        musicAudioSource.volume = volume;
+        isWaveActive = true;
+
+        if (currentWaveIndex < waveSets.Length)
+        {
+            GameObject waveSet = waveSets[currentWaveIndex];
+            if (waveSet != null)
+            {
+                waveSet.SetActive(true);
+            }
+        }
+
+        currentWaveIndex++;
     }
 
-    public void NextWave()
+    private IEnumerator ShowCountdownAndStartNextWave()
     {
+        isCountdownActive = true;
+        waveCountdown.SetActive(true);
 
+        currentCountdown = timeBetweenWaves;
+
+        while (currentCountdown > 0)
+        {
+            UpdateCountdownText();
+            yield return null;
+        }
+
+        waveCountdown.SetActive(false);
+        isCountdownActive = false;
+
+
+        StartWave();
+    }
+
+    private void UpdateCountdownText()
+    {
+        if (waveCountdownText != null)
+        {
+            waveCountdownText.text = "Next Wave in: " + Mathf.CeilToInt(currentCountdown).ToString();
+        }
+        currentCountdown -= Time.deltaTime;
     }
 }

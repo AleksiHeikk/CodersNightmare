@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement; // Need to add this for scene management
+using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
 
@@ -13,9 +13,7 @@ public class MenuManager : MonoBehaviour
 
     private void Start()
     {
-        // Attach functions to the onClick events
         playButton.onClick.AddListener(OpenGameScene);
-        settingsButton.onClick.AddListener(OpenSettingsScene);
         quitButton.onClick.AddListener(QuitGame);
     }
 
@@ -23,12 +21,6 @@ public class MenuManager : MonoBehaviour
     {
         // Load the game scene
         SceneManager.LoadScene("CodersNightmare");
-    }
-
-    public void OpenSettingsScene()
-    {
-        // Load the settings scene
-        SceneManager.LoadScene("Settings");
     }
 
     public void QuitGame()
